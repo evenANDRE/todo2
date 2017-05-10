@@ -1,0 +1,52 @@
+﻿<div class="container">
+    <h3>Legg til punkt for {{navn}}</h3>
+    <form  class="form-horizontal" name="todo">
+        <div class="form-group has-feedback">
+            <label class="col-sm-1 control-label">Oppgave:</label>
+            <div class="col-sm-4">
+                <input class="form-control" id="focusedInput" type="text" name="tittel" ng-model="tittel" maxlength="200" required><span class="glyphicon glyphicon-ok form-control-feedback" ng-show="todo.tittel.$valid"> </span>
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-sm-1 control-label">Beskrivelse:</label>
+            <div class="col-sm-4">
+                <textarea class="form-control" rows="3" id="focusedInput" ng-model="beskrivelse" maxlength="1000" name="beskrivelse" required></textarea><span class="glyphicon glyphicon-ok form-control-feedback" ng-show="todo.beskrivelse.$valid"> </span>
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-sm-1 control-label">Produkt:</label>
+            <div class="col-sm-4">
+                <input class="form-control" id="focusedInput" type="text" ng-model="produkt" maxlength="200" name="produkt" required><span class="glyphicon glyphicon-ok form-control-feedback" ng-show="todo.produkt.$valid"> </span>
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-sm-1 control-label">Type:</label>
+            <div class="col-sm-4">
+                <input class="form-control" id="focusedInput" type="text" ng-model="type" maxlength="200" name="type" required><span class="glyphicon glyphicon-ok form-control-feedback" ng-show="todo.produkt.$valid"> </span>
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-sm-1 control-label"></label>
+            <div class="col-sm-4 alert alert-info" ng-hide="todo.$valid">
+                Alle feltene må fylles ut!
+            </div>
+            <div class="col-sm-4 alert alert-success" ng-show="todo.$valid">
+                <strong>Flott!</strong> Punkt kan nå legges inn.
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-1 control-label"></label>
+            <div class="col-sm-2">
+                <input type="submit" class="btn btn-primary" value="Legg til punkt" ng-disabled="todo.$invalid" ng-click="addItem()">
+            </div>
+            <div class="alert alert-danger col-sm-3" ng-show="warning">
+                <strong>Feil:</strong> Alle felt må fylles ut!
+            </div>
+
+        </div>
+    </form>
+    <div>
+        <p ng-repeat="item in items">Lagt til oppgave: {{item}}</p>        
+    </div>
+</div>  
+    

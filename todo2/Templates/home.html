@@ -1,0 +1,10 @@
+﻿<div class="container">
+    <p>Velg person for å legge inn ny oppgave</p>
+    <ul  class="list-group">
+        <li class="list-group-item" ng-repeat="person in data | orderBy:'navn'">
+            <button type="button" class="btn btn-link" ng-click="openTodoList(person.id)">{{person.navn}}</button> 
+            <span class="badge">{{person.count}} punkter</span>
+        </li>
+    </ul>
+    
+</div>

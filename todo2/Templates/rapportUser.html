@@ -1,0 +1,28 @@
+﻿<div class="container">
+    <div>
+        <h3>Registrerte punkter på {{navn}}</h3>
+        <p>Sorter etter: <select ng-model="sorterkolonne">
+                             <option value="Number">Nummer</option>
+                             <option value="Produkt">Produkt</option>
+                             <option value="Type">Type</option>
+                        </select></p>
+        <table class="table table-hover">
+            <tr>
+                <th class="col-md-1">Nummer</th>
+                <th class="col-md-2">Tittel</th>
+                <th class="col-md-5">Beskrivelse</th>
+                <th class="col-md-2">Produkt</th>
+                <th class="col-md-2">Type</th>
+            </tr>
+            <tbody>
+                <tr ng-repeat="item in items | orderBy:sorterkolonne">
+                    <td>{{item.Number}}</td>
+                    <td>{{item.Tittel}}</td>
+                    <td>{{item.Beskrivelse}}</td>
+                    <td>{{item.Produkt}}</td>
+                    <td>{{item.Type}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

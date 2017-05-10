@@ -1,0 +1,18 @@
+﻿<div class="container">
+    <table class="table table-hover">
+        <tr>
+            <th>Navn</th>
+            <th>Epost</th>
+            <th>Tlfnr</th>
+            <th>ToDo #</th>
+        </tr>
+        <tbody>
+            <tr ng-repeat="person in data">
+                <td><button type="button" class="btn btn-link" ng-click="todoRaport(person.id)">{{person.navn}}</button></td>
+                <td>{{person.epost}}</td>
+                <td>{{person.tlfnr}}</td>
+                <td>{{person.count}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
